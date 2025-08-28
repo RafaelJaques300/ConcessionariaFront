@@ -1,16 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Concessionária X</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap /css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concessionária Moderna</title>
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-  <!-- Conteúdo vai aqui -->
+  <header>
+    <h1 class="titulo-concessionaria">Rafael Concessionária</h1>
+    <nav>
+      <ul>
+        <li><a href="#clientes" class="nav-link">Clientes</a></li>
+        <li><a href="#estoque" class="nav-link">Estoque</a></li>
+        <li><a href="#manutencao" class="nav-link">Manutenção</a></li>
+        <li><a href="#veiculos" class="nav-link">Veículos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-layout">
+    <div class="container">
+      <section id="clientes" class="conteudo">
+        <div class="card">
+          <h2 class="card-title">Clientes</h2>
+          <div style="display:flex;gap:12px;">
+            <button class="btn" onclick="carregarClientes()">Ver Clientes</button>
+            <button class="btn" onclick="abrirModalCadastro()">Cadastrar Cliente</button>
+          </div>
+          <div id="lista-clientes" class="list-group"></div>
+        </div>
+      </section>
+      <section id="estoque" class="conteudo">
+        <div class="card">
+          <h2 class="card-title">Estoque</h2>
+          <button class="btn" onclick="carregarEstoque()">Ver Estoque</button>
+          <div id="lista-estoque" class="list-group"></div>
+        </div>
+      </section>
+      <section id="manutencao" class="conteudo">
+        <div class="card">
+          <h2 class="card-title">Manutenção</h2>
+          <button class="btn" onclick="carregarManutencao()">Ver Manutenção</button>
+          <div id="lista-manutencao" class="list-group"></div>
+        </div>
+      </section>
+      <section id="veiculos" class="conteudo">
+        <div class="card">
+          <h2 class="card-title">Veículos</h2>
+          <button class="btn" onclick="carregarVeiculos()">Ver Veículos</button>
+          <div id="lista-veiculos" class="list-group"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Concessionária Moderna. Todos os direitos reservados.
+  </footer>
+  <!-- Modal de cadastro de cliente -->
+  <div id="modal-cadastro" class="modal-overlay">
+    <div class="modal">
+      <h3>Cadastrar Cliente</h3>
+      <form id="form-cadastro-cliente">
+        <input type="text" name="nome" placeholder="Nome" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px;">
+          <button type="button" class="btn" onclick="fecharModalCadastro()">Cancelar</button>
+          <button type="submit" class="btn">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div id="modal-veiculo" class="modal-overlay">
+    <div class="modal">
+      <h3>Cadastrar Veiculo</h3>
+      <form id="form-cadastro-veiculo">
+        <input type="text" name="carro" placeholder="Carro" required />
+        <input type="email" name="placa" placeholder="Placa" required />
+        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px;">
+          <button type="button" class="btn" onclick="fecharModalCadastro()">Cancelar</button>
+          <button type="submit" class="btn">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+  <!-- Toast de confirmação -->
+  <div id="toast" class="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>

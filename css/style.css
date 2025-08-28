@@ -1,0 +1,307 @@
+body {
+  /* Fundo com gradiente suave */
+  background: linear-gradient(135deg, #23243a 0%, #181824 100%);
+  color: #f3f3f3;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Fundo geral */
+body {
+  background: linear-gradient(120deg, #1a1f2b 0%, #2d3a4a 100%);
+  color: #f5f6fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header moderno */
+header {
+  background: #232a3b;
+  padding: 32px 0 18px 0;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.12);
+  border-bottom: 3px solid #00b8ff;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  color: #00b8ff;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Menu horizontal com efeito */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 18px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f5f6fa;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 16px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0,184,255,0.08);
+}
+
+nav ul li a:hover {
+  background: #00b8ff;
+  color: #232a3b;
+  box-shadow: 0 4px 16px rgba(0,184,255,0.18);
+}
+
+/* Conteúdo principal */
+main {
+  flex: 1;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,184,255,0.10);
+  padding: 40px 32px;
+  margin: 0 auto;
+}
+
+/* Cards modernos */
+.card {
+  background: rgba(34,42,59,0.98);
+  border-radius: 20px;
+  box-shadow: 0 6px 32px rgba(0,184,255,0.12);
+  border: none;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover {
+  box-shadow: 0 12px 48px rgba(0,184,255,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Títulos */
+h2, .card-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #00b8ff;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #00b8ff;
+  padding-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+/* Botões modernos */
+.btn {
+  font-weight: 600;
+  border-radius: 24px;
+  padding: 10px 32px;
+  font-size: 1em;
+  border: none;
+  background: #00b8ff;
+  color: #232a3b;
+  box-shadow: 0 2px 8px rgba(0,184,255,0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+  background: #0090c7;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,184,255,0.18);
+}
+
+/* Lista de clientes */
+.list-group {
+  border-radius: 1rem;
+  margin-top: 18px;
+  max-height: 340px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #00b8ff #232a3b;
+}
+.list-group::-webkit-scrollbar {
+  width: 8px;
+  background: #232a3b;
+}
+.list-group::-webkit-scrollbar-thumb {
+  background: #00b8ff;
+  border-radius: 10px;
+}
+
+/* Itens da lista */
+.list-group-item {
+  background: rgba(44,62,80,0.85);
+  margin-bottom: 10px;
+  padding: 18px 28px;
+  border-radius: 14px;
+  font-size: 1.1em;
+  box-shadow: 0 1px 8px rgba(0,184,255,0.08);
+  color: #f5f6fa;
+  border: 1px solid #00b8ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.list-group-item:hover {
+  background: #00b8ff;
+  color: #232a3b;
+  box-shadow: 0 2px 16px rgba(0,184,255,0.18);
+}
+
+/* Layout principal */
+.main-layout {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Título principal estilizado */
+.titulo-concessionaria {
+  display: inline-block;
+  padding: 18px 48px;
+  border: 3px solid #00b8ff;
+  border-radius: 22px;
+  background: rgba(30,40,60,0.8);
+  box-shadow: 0 4px 24px rgba(0,184,255,0.12);
+  font-size: 2.5em;
+  color: #fff;
+  margin-bottom: 40px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Footer moderno */
+footer {
+  background: #232a3b;
+  text-align: center;
+  padding: 18px;
+  font-size: 1rem;
+  border-top: 2px solid #00b8ff;
+  color: #f5f6fa;
+  box-shadow: 0 -2px 12px rgba(44,62,80,0.10);
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.conteudo {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.conteudo.ativo {
+  display: block;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,40,60,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-overlay.ativo {
+  display: flex;
+}
+.modal {
+  background: #232a3b;
+  padding: 32px 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,184,255,0.18);
+  min-width: 320px;
+  max-width: 90vw;
+}
+.modal h3 {
+  color: #00b8ff;
+  margin-bottom: 18px;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.modal input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #00b8ff;
+  background: #1a1f2b;
+  color: #f5f6fa;
+  font-size: 1em;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #00b8ff;
+  color: #232a3b;
+  padding: 16px 32px;
+  border-radius: 18px;
+  font-weight: 700;
+  box-shadow: 0 4px 24px rgba(0,184,255,0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  z-index: 2000;
+}
+.toast.ativo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+    gap: 0;
+  }
+  .left-panel, .right-panel {
+    gap: 14px;
+  }
+  .titulo-concessionaria {
+    font-size: 1.5em;
+    padding: 12px 24px;
+  }
+  .container {
+    padding: 24px 16px;
+  }
+  h2, .card-title {
+    font-size: 1.3em;
+  }
+  .btn {
+    padding: 10px 24px;
+    font-size: 0.9em;
+  }
+}
