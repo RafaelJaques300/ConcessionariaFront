@@ -12,7 +12,7 @@
     <nav>
       <ul>
         <li><a href="#clientes" class="nav-link">Clientes</a></li>
-        <li><a href="#estoque" class="nav-link">Estoque</a></li>
+        <!-- <li><a href="#estoque" class="nav-link">Estoque</a></li> -->
         <li><a href="#manutencao" class="nav-link">Manutenção</a></li>
         <li><a href="#veiculos" class="nav-link">Veículos</a></li>
       </ul>
@@ -20,6 +20,8 @@
   </header>
   <main class="main-layout">
     <div class="container">
+      
+      <!-- CLIENTES -->
       <section id="clientes" class="conteudo">
         <div class="card">
           <h2 class="card-title">Clientes</h2>
@@ -30,53 +32,54 @@
           <div id="lista-clientes" class="list-group"></div>
         </div>
       </section>
+      
+      <!-- ESTOQUE
       <section id="estoque" class="conteudo">
         <div class="card">
           <h2 class="card-title">Estoque</h2>
           <button class="btn" onclick="carregarEstoque()">Ver Estoque</button>
           <div id="lista-estoque" class="list-group"></div>
         </div>
-      </section>
+      </section> -->
+      
+      <!-- MANUTENÇÃO -->
       <section id="manutencao" class="conteudo">
         <div class="card">
           <h2 class="card-title">Manutenção</h2>
-          <button class="btn" onclick="carregarManutencao()">Ver Manutenção</button>
+          <div style="display:flex;gap:12px;">
+            <button class="btn" onclick="carregarManutencao()">Ver Manutenção</button>
+            <button class="btn" onclick="abrirModalCadastroManutencao()">Cadastrar Manutenção</button>
+          </div>
           <div id="lista-manutencao" class="list-group"></div>
         </div>
       </section>
+      
+      <!-- VEÍCULOS -->
       <section id="veiculos" class="conteudo">
         <div class="card">
           <h2 class="card-title">Veículos</h2>
-          <button class="btn" onclick="carregarVeiculos()">Ver Veículos</button>
+          <div style="display:flex;gap:12px;">
+            <button class="btn" onclick="carregarVeiculos()">Ver Veículos</button>
+            <button class="btn" onclick="abrirModalCadastroVeiculo()">Cadastrar Veículo</button>
+          </div>
           <div id="lista-veiculos" class="list-group"></div>
         </div>
       </section>
+      
     </div>
   </main>
   <footer>
     &copy; 2025 Concessionária Moderna. Todos os direitos reservados.
   </footer>
-  <!-- Modal de cadastro de cliente -->
+
+  <!-- MODAL DE CADASTRO CLIENTE -->
   <div id="modal-cadastro" class="modal-overlay">
     <div class="modal">
       <h3>Cadastrar Cliente</h3>
       <form id="form-cadastro-cliente">
         <input type="text" name="nome" placeholder="Nome" required />
         <input type="email" name="email" placeholder="Email" required />
-        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px;">
-          <button type="button" class="btn" onclick="fecharModalCadastro()">Cancelar</button>
-          <button type="submit" class="btn">Cadastrar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  
-  <div id="modal-veiculo" class="modal-overlay">
-    <div class="modal">
-      <h3>Cadastrar Veiculo</h3>
-      <form id="form-cadastro-veiculo">
-        <input type="text" name="carro" placeholder="Carro" required />
-        <input type="email" name="placa" placeholder="Placa" required />
+        <input type="tel" name="telefone" placeholder="Telefone" required />
         <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px;">
           <button type="button" class="btn" onclick="fecharModalCadastro()">Cancelar</button>
           <button type="submit" class="btn">Cadastrar</button>
@@ -85,9 +88,137 @@
     </div>
   </div>
 
-  <!-- Toast de confirmação -->
+  <!-- MODAL DE CADASTRO VEÍCULO -->
+  <div id="modal-cadastro-veiculo" class="modal-overlay">
+    <div class="modal">
+      <h3>Cadastrar Veículo</h3>
+      <form id="form-cadastro-veiculo">
+        <input type="text" name="marca" placeholder="Marca" required>
+        <input type="text" name="modelo" placeholder="Modelo" required>
+        <input type="number" name="ano" placeholder="Ano" required>
+        <input type="text" name="cor" placeholder="Cor" required>
+        <input type="number" step="0.01" name="preco" placeholder="Preço" required>
+        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px;">
+          <button type="button" class="btn" onclick="fecharModalCadastroVeiculo()">Cancelar</button>
+          <button type="submit" class="btn">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Cadastro Manutenção -->
+  <div id="modal-cadastro-manutencao" class="modal-overlay">
+    <div class="modal">
+      <h3>Cadastrar Manutenção</h3>
+      <form id="form-cadastro-manutencao">
+        <input type="text" name="tipoManutencao" placeholder="Tipo de Manutenção" required>
+        <input type="date" name="dataManutencao" required>
+        <select name="status" required>
+          <option value="">Status</option>
+          <option value="pendente">Pendente</option>
+          <option value="finalizado">Finalizado</option>
+          <option value="processando">Processando</option>
+        </select>
+        <input type="number" step="0.01" name="custo" placeholder="Custo (R$)" required>
+        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px;">
+          <button type="button" class="btn" onclick="fecharModalCadastroManutencao()">Cancelar</button>
+          <button type="submit" class="btn">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
   <div id="toast" class="toast"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./js/script.js"></script>
+  <script>
+    // ==================== MODAL MANUTENÇÃO ==================== //
+function abrirModalCadastroManutencao() {
+  document.getElementById("modal-cadastro-manutencao").classList.add("ativo");
+}
+function fecharModalCadastroManutencao() {
+  document.getElementById("modal-cadastro-manutencao").classList.remove("ativo");
+}
+document.getElementById("modal-cadastro-manutencao").addEventListener("click", e => {
+  if (e.target === e.currentTarget) fecharModalCadastroManutencao();
+});
+
+// Cadastro de manutenção
+document.getElementById("form-cadastro-manutencao").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const manutencao = {
+    tipoManutencao: form.tipoManutencao.value,
+    dataManutencao: form.dataManutencao.value,
+    status: form.status.value,
+    custo: parseFloat(form.custo.value)
+  };
+
+  try {
+    const res = await fetch("http://localhost:8080/api/manutencao", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(manutencao)
+    });
+
+   // if (!res.ok) throw new Error("Erro ao cadastrar manutenção");
+
+    mostrarToast("Manutenção cadastrada com sucesso!");
+    form.reset();
+    fecharModalCadastroManutencao();
+    carregarManutencao();
+  } catch (err) {
+    console.error("Erro ao cadastrar manutenção:", err);
+    mostrarToast("Erro ao cadastrar manutenção!");
+  }
+});
+
+// Carregar lista de manutenções
+async function carregarManutencao() {
+  const lista = document.getElementById("lista-manutencao");
+  if (!lista) return;
+
+  lista.innerHTML = `<span class="loader"></span> Carregando manutenções...`;
+
+  try {
+    const res = await fetch("http://localhost:8080/api/manutencao");
+    if (!res.ok) throw new Error("Erro na API de manutenção");
+
+    const manutencao = await res.json();
+    console.log(manutencao); // <-- Adicione esta linha
+    lista.innerHTML = "";
+
+    if (manutencao.length === 0) {
+      lista.innerHTML = "<div style='color:#00b8ff;'>Nenhuma manutenção encontrada.</div>";
+      return;
+    }
+
+    manutencao.forEach(m => {
+      const tipo = m.tipoManutencao ?? "(Tipo não informado)";
+      const data = m.dataManutencao ?? "(Data não informada)";
+      const status = m.status ?? "(Status não informado)";
+      const custoFormatado = m.custo != null
+        ? Number(m.custo).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+        : "(Custo não informado)";
+      const item = document.createElement("div");
+      item.classList.add("list-group-item");
+      item.innerHTML = `
+        <div>
+          <strong>${tipo}</strong> - ${data}<br>
+          <small>Status: ${status} | Custo: ${custoFormatado}</small>
+        </div>
+      `;
+      lista.appendChild(item);
+    });
+  } catch (err) {
+    lista.innerHTML = "<div style='color:red;'>Erro ao carregar manutenções.</div>";
+    console.error("Erro ao carregar manutenções:", err);
+  }
+}
+  </script>
 </body>
+
+
 </html>
